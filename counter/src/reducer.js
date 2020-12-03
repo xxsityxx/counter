@@ -1,6 +1,4 @@
-
-
-const INCREMENT = 'e.INCREMENT'
+import  INCREMENT  from './action'
 
 
 const initialState = {
@@ -9,9 +7,9 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-      case INCREMENT: {
+      case INCREMENT: 
         return Object.assign({}, state, { count: state.count + 1})
-      }
+      
       default: return state
     }
   }

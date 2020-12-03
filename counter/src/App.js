@@ -1,15 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-
-const increment = () => ({
-  type: INCREMENT
-})
-
-const INCREMENT = 'e.INCREMENT'
+import  increment  from './creator'
 
 
-class App extends Component {
+class App extends React.Component {
   constructor(props) {
      super(props)
   }
@@ -26,13 +21,6 @@ class App extends Component {
     )
   }
 }
-
-
-App.propTypes = {
-  count: PropTypes.number.isRequired,
-  increment: PropTypes.func.isRequired
-}
-
 const mapStateToProps = state => ({
   count: state.count
 })
@@ -41,6 +29,13 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = ({
   increment
 })
+
+
+
+App.propTypes = {
+  count: PropTypes.number.isRequired,
+  increment: PropTypes.func.isRequired
+}
 
 
 const AppContainer = connect(mapStateToProps, mapDispatchToProps)(App)
