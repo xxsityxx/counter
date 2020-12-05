@@ -1,8 +1,16 @@
-import { render, screen } from '@testing-library/react';
+import { mount, ShallowWrapper } from 'enzyme';
+import React from 'react';
+import ReactDOM from 'react-dom';
 import App from './App';
+import { shallow } from 'enzyme'
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+it("renders without crashing", () => {
+  expect(<App />);
+});
+
+it('renders without crashing', () => {
+  const page = expect(<App />);
+  const theButton = <button>Normal Increment</button>;
+  expect(page.contains(theButton)).toEqual(true);
 });
